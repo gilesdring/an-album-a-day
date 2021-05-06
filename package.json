@@ -1,0 +1,20 @@
+{
+  "name": "aaad",
+  "version": "0.0.0",
+  "description": "/database/search?q={query}&{?type,title,release_title,credit,artist,anv,label,genre,style,country,year,format,catno,barcode,track,submitter,contributor}",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giles Dring <giles@dringtech.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "csv": "^5.4.0",
+    "dotenv": "^8.2.0",
+    "g-sheets-api": "^1.4.1"
+  }
+}
