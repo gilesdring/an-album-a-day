@@ -12,10 +12,10 @@ const augment = ({ artist, album }) => discogs.search(artist, album)
   .then((data) => (data ? { year: data.year, discogs_id: data.id, cover_image: data.cover_image, discogs_title: data.title } : undefined))
   ;
 
-const rateLimit = async () => new Promise((resolve) => setTimeout(resolve, 10));
+const dayString = (date) => date.toISOString().split('T')[0];
+const save = async (data) => new Promise(resolve => writeFile(`data/${dayString(data.date)}.json`, JSON.stringify(data, null, 2), resolve));
 
 (async () => {
-  const records = [];
   const parser = (await source.getStream()).pipe(parse({
     columns: true,
     cast: function(value, context){
@@ -39,9 +39,9 @@ const rateLimit = async () => new Promise((resolve) => setTimeout(resolve, 10));
           console.error(error.message);
           return {};
         });
-      records.push({ ...record, ...discogsInfo });
+      const album = { ...record, ...discogsInfo };
+      await save(album);
     }
   }
-  await new Promise(resolve => writeFile('data/aaad.json', JSON.stringify(records, null, 2), resolve));
   console.log('Done...');
 })();
