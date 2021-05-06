@@ -7,6 +7,8 @@ import './lib/config.mjs'
 const discogs = new Discogs(process.env.DISCOGS_TOKEN);
 const source = new GoogleSheets(process.env.SOURCE_CSV);
 
+const dates = (process.env.REFRESH_DATES || '').split(/\s+/).filter(x => x);
+
 const augment = ({ artist, album }) => discogs.search(artist, album)
   .then(data => data.results[0])
   .then((data) => (data ? { year: data.year, discogs_id: data.id, cover_image: data.cover_image, discogs_title: data.title } : undefined))
@@ -32,6 +34,7 @@ const save = async (data) => new Promise(resolve => writeFile(`data/${dayString(
   }))
 
   for await (const record of parser) {
+    if (dates.length && !dates.includes(dayString(record.date))) continue;
     if (record.artist && record.album) {
       console.log(`Processing ${record.album} by ${record.artist}...`)
       const discogsInfo = await augment(record)
