@@ -6,7 +6,10 @@ const discogs = new Discogs(config.discogs.token);
 
 const filename = Deno.args[0];
 
-const albumsList = await readCSV(filename);
+type albumType = {
+  artist: string;
+  album: string;
+}
 
 const dropUndefined = (album: any) => Boolean(album.Artist);
 
@@ -18,10 +21,7 @@ const parseAlbum = (album: any) => ({
   comments: album.Comments,
 })
 
-type albumType = {
-  artist: string;
-  album: string;
-}
+const albumsList = (await readCSV(filename)).filter(dropUndefined).map(parseAlbum);
 
 const getDiscogsData = async ({ artist, album }: albumType) => await discogs.search(artist, album)
   .then((response: any) => response.results[0])
@@ -32,6 +32,8 @@ const getDiscogsData = async ({ artist, album }: albumType) => await discogs.sea
   });
 
 const dayString = (date: Date) => date.toISOString().split('T')[0];
+
+await writeJSON(`data/aaad.json`, albumsList);
 
 for (const album of albumsList.filter(dropUndefined).map(parseAlbum)) {
   const discogsInfo = await getDiscogsData(album);
