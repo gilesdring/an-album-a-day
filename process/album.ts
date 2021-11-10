@@ -33,7 +33,7 @@ const getDiscogsData = async ({ artist, album }: albumType) => await discogs.sea
 
 const dayString = (date: Date) => date.toISOString().split('T')[0];
 
-await writeJSON(`data/aaad.json`, albumsList);
+await writeJSON(`data/aaad.json`, albumsList.map(d => ({ id: dayString(d.date), ...d })));
 
 for (const album of albumsList.filter(dropUndefined).map(parseAlbum)) {
   const discogsInfo = await getDiscogsData(album);
