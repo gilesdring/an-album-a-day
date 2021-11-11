@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Album A Day</title>
+  <script src="https://cdn.jsdelivr.net/npm/minisearch@3.1.0/dist/umd/index.min.js"></script>
+  <style>
+    * {
+      font-size: 1em;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    body,
+    input {
+      font-family: monospace;
+    }
+
+    body>* {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: paleturquoise;
+      padding: 1em 1em;
+      box-sizing: border-box;
+    }
+
+    section {
+      margin-bottom: 1em;
+    }
+
+    ul {
+      padding-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>An Album A Day</h1>
+  </header>
+  <main id="main">
+    <section>
+      <p>
+        I have listened to a different album every day in 2021.
+        Mostly new to me, and largely new albums, although there
+        are a few old favourites and classics I've inexplicably
+        missed out on.
+      </p>
+      <p>
+        This is a list of the albums.
+      </p>
+    </section>
+    <form id="search-form">
+      <label for="search-box">Search </label>
+      <input id="search-box" type="text">
+    </form>
+    <section id="albums">
+      <ul></ul>
+    </section>
+  </main>
+  <script>
+    (async (root, MiniSearch) => {
+      const albums = await fetch(`${root}/data/aaad.json`).then(request => request.json());
+      const minisearch = new MiniSearch({ fields: ['artist', 'album'], storeFields: ['artist', 'album'] });
+      minisearch.addAll(albums);
+      const resultList = document.querySelector('#albums ul');
+
+      const formatResult = ({ artist, album }) => `<li>${artist}: ${album}</li>`;
+      const resetList = () => {
+        resultList.innerHTML = albums.map(formatResult).join('');
+      }
+
+      resetList();
+
+      const search = (term) => {
+        if (!term) {
+          resetList();
+          return;
+        }
+        const resultSet = minisearch.search(term, { combineWith: 'AND', prefix: true, fuzzy: 0.2 });
+        resultList.innerHTML = resultSet.map(formatResult).join('');
+      };
+      document.getElementById('search-box').addEventListener('input', (e) => search(e.target.value));
+    })('/ an-album-a-day', MiniSearch);
+  </script>
+</body>
+
+</html>
