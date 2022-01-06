@@ -45,8 +45,8 @@ Date,Artist,Album,New to me?,Comments,Playlist,Listen Again
 2021-02-13,Byron Westbrook,Distortion Hue,TRUE,,TRUE,
 2021-02-14,TRAKA,Start Taking Note,TRUE,,TRUE,
 2021-02-15,Black Country New Road,For the first time,TRUE,Mercury Prize,TRUE,
-2021-02-16,Divide and Dissolve,Gas Lit,TRUE,,TRUE,
-2021-02-17,Billy Nomates,Billy Nomates,TRUE,,TRUE,
+2021-02-16,Divide and Dissolve,Gas Lit,TRUE,,TRUE,TRUE
+2021-02-17,Billy Nomates,Billy Nomates,TRUE,,TRUE,TRUE
 2021-02-18,Nadine Shah,Kitchen Sink,TRUE,,TRUE,
 2021-02-19,Thurston Moore,Screen Time,TRUE,,FALSE,
 2021-02-20,Oneohtrix Point Never,Magic Oneohtrix Point Never,TRUE,,TRUE,
@@ -54,9 +54,9 @@ Date,Artist,Album,New to me?,Comments,Playlist,Listen Again
 2021-02-22,Ryan Dugré,Three Rivers,TRUE,,TRUE,
 2021-02-23,Mary Timony,Mountains,TRUE,,TRUE,
 2021-02-24,LoneLady,Nerve Up,TRUE,,TRUE,
-2021-02-25,Anna B Savage,A Common Turn,TRUE,,TRUE,
+2021-02-25,Anna B Savage,A Common Turn,TRUE,,TRUE,TRUE
 2021-02-26,Smith & Burrows,Only Smith & Burrows Is Good Enough,TRUE,,TRUE,
-2021-02-27,Mogwai,As The Love Continues,TRUE,Mercury Prize,TRUE,
+2021-02-27,Mogwai,As The Love Continues,TRUE,Mercury Prize,TRUE,TRUE
 2021-02-28,Nick Cave,Carnage,TRUE,,TRUE,
 2021-03-01,Dogleg,Melee,TRUE,,TRUE,
 2021-03-02,Architects,For Those That Wish To Exist,TRUE,,TRUE,
@@ -75,7 +75,7 @@ Date,Artist,Album,New to me?,Comments,Playlist,Listen Again
 2021-03-15,bdrmm,Bedroom,TRUE,,TRUE,
 2021-03-16,Pearl Charles,Magic Mirror,TRUE,,TRUE,
 2021-03-17,Cool Jerks,England,TRUE,,TRUE,
-2021-03-18,The Anchoress,The Art Of Losing,TRUE,,TRUE,
+2021-03-18,The Anchoress,The Art Of Losing,TRUE,,TRUE,TRUE
 2021-03-19,Pillow Queens,In Waiting,TRUE,,TRUE,
 2021-03-20,Mariachi El Bronx,Mariachi El Bronx (I),TRUE,,TRUE,
 2021-03-21,Snapped Ankles,21 Metres To Hebden Bridge (Live),TRUE,,TRUE,
@@ -143,7 +143,7 @@ Date,Artist,Album,New to me?,Comments,Playlist,Listen Again
 2021-05-22,Rudimentary Peni,Great War,TRUE,,TRUE,
 2021-05-23,Conflict,The Ungovernable Force,FALSE,,TRUE,
 2021-05-24,Martha and The Muffins,Metro Music,FALSE,,TRUE,
-2021-05-25,Penfriend,Exotic Monsters,TRUE,,TRUE,
+2021-05-25,Penfriend,Exotic Monsters,TRUE,,TRUE,TRUE
 2021-05-26,Waste Man,One Day It'll All Be You,TRUE,,TRUE,
 2021-05-27,Simona Zamboli,Ethernity,TRUE,,TRUE,
 2021-05-28,Satanic Planet,Satanic Planet,TRUE,,TRUE,
@@ -174,7 +174,7 @@ Date,Artist,Album,New to me?,Comments,Playlist,Listen Again
 2021-06-22,Squid,Bright Green Field,TRUE,,TRUE,
 2021-06-23,Juniore,"Un, Deux, Trois bonus",TRUE,,TRUE,
 2021-06-24,Rokurokubi,"Iris, Flower of Violence",TRUE,,TRUE,
-2021-06-25,The Armed,ULTRAPOP,TRUE,,TRUE,
+2021-06-25,The Armed,ULTRAPOP,TRUE,,TRUE,TRUE
 2021-06-26,Japanese Breakfast,Jubilee,TRUE,,TRUE,
 2021-06-27,Hattie Cooke,Bliss Land,TRUE,,TRUE,
 2021-06-28,Loop,A Gilded Eternity,FALSE,,TRUE,
